@@ -1,0 +1,236 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap');
+
+:root {
+     --desatRed: hsl(0, 36%, 70%);
+     --softRed: hsl(0, 93%, 68%);
+
+     --darkGrayishRed: hsl(0, 6%, 24%);
+
+     --defaultGradient: linear-gradient(
+          135deg,
+          hsl(0, 0%, 100%),
+          hsl(0, 100%, 98%)
+     );
+     --activeGradient: linear-gradient(
+          135deg,
+          hsl(0, 80%, 86%),
+          hsl(0, 74%, 74%)
+     );
+}
+
+*,
+*::after,
+*::before {
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+}
+
+body {
+     font-family: 'Josefin Sans', sans-serif;
+     min-height: 100vh;
+     background: var(--defaultGradient);
+}
+
+.container {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     flex-direction: column-reverse;
+     text-align: center;
+}
+
+header {
+     padding: 2em;
+}
+
+header img {
+     width: 120px;
+}
+
+.text {
+     width: 100%;
+     padding: 4em 2em;
+}
+
+.text h1 {
+     font-size: 2.5rem;
+     font-weight: 600;
+     color: var(--darkGrayishRed);
+     text-transform: uppercase;
+     line-height: 1.2;
+     letter-spacing: 0.3em;
+     margin: 0 3.5em;
+     margin-bottom: 0.6em;
+}
+
+.light {
+     font-weight: 300;
+     color: var(--desatRed);
+}
+
+.text p {
+     font-size: 0.85rem;
+     font-weight: 400;
+     opacity: 0.8;
+     color: var(--desatRed);
+     line-height: 1.7;
+     letter-spacing: 1px;
+     margin-bottom: 2.5em;
+}
+
+.text form {
+     position: relative;
+     width: 100%;
+     height: 50px;
+}
+
+.form-control {
+     width: 100%;
+     height: 100%;
+}
+
+.text input {
+     width: 100%;
+     height: 100%;
+     border: 1px solid var(--desatRed);
+     border-radius: 40px;
+     background: transparent;
+     padding-left: 2em;
+     margin-bottom: 1em;
+}
+
+.text input::placeholder {
+     font-family: 'Josefin Sans', sans-serif;
+     color: var(--desatRed);
+     opacity: 0.5;
+     font-size: 1.2em;
+}
+
+.text input:focus {
+     outline: 0;
+}
+
+.text .error input {
+     border: 2px solid var(--softRed);
+}
+
+.text small {
+     margin-left: 2em;
+     color: var(--softRed);
+     font-size: 0.8em;
+     text-align: left;
+     visibility: hidden;
+}
+
+.text .error small {
+     visibility: visible;
+}
+
+.form-actions {
+     position: absolute;
+     top: 0;
+     bottom: 0;
+     right: 0;
+}
+
+form .err-icon {
+     visibility: hidden;
+}
+
+form .error .err-icon {
+     visibility: visible;
+     width: 1.2rem;
+     margin-right: 0.5rem;
+     margin: auto 0.5rem auto 0;
+     user-select: none;
+}
+
+.text button {
+     width: 80px;
+     height: 100%;
+     border-radius: 50px;
+     background: var(--activeGradient);
+     border: none;
+     box-shadow: 0 8px 12px hsla(0, 74%, 74%, 0.5);
+     cursor: pointer;
+}
+
+.image {
+     background: url(../images/hero-mobile.jpg) no-repeat
+          center center / cover;
+     width: 100%;
+     height: 300px;
+}
+
+.attribution {
+     padding-top: 1em;
+     font-size: 0.75rem;
+     line-height: 20px;
+     text-align: center;
+     color: var(--desatRed);
+}
+
+.attribution a {
+     text-decoration: none;
+     color: var(--darkGrayishRed);
+     font-weight: bold;
+}
+
+.attribution a:hover {
+     color: var(--softRed);
+}
+
+@media (min-width: 768px) {
+     body {
+          background: url(../images/bg-pattern-desktop.svg)
+               no-repeat center center / cover;
+     }
+
+     .container {
+          flex-direction: row;
+          text-align: left;
+          position: relative;
+     }
+
+     header {
+          position: absolute;
+          padding-left: 10em;
+          z-index: 99;
+     }
+
+     header img {
+          width: 160px;
+     }
+
+     .text {
+          padding: 4em 5em 4em 10em;
+     }
+
+     .text h1 {
+          margin: 0;
+          font-size: 3.8rem;
+     }
+
+     .image {
+          background: url(../images/hero-desktop.jpg)
+               no-repeat center center / cover;
+          height: 100vh;
+     }
+}
+
+@media (max-width: 600px) {
+     .text {
+          padding: 4em 1.7em;
+     }
+
+     .text h1 {
+          margin: 0 1.125em;
+     }
+}
+
+@media (max-width: 400px) {
+     .text h1 {
+          margin: 0;
+     }
+}
